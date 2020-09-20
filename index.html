@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="palavra" placeholder="Buscar por...">
+                        <input type="text" class="form-control" id="pessoa" placeholder="Buscar por...">
                         <span class="input-group-btn">
                             <button class="btn btn-default" id="buscar" type="button">Buscar</button>
                         </span>
@@ -26,7 +26,7 @@
         </div>
         
         <script>
-            function buscar(palavra)
+            function buscar(pessoa)
             {
                 //O método $.ajax(); é o responsável pela requisição
                 $.ajax
@@ -50,7 +50,7 @@
             
             
             $('#buscar').click(function () {
-                buscar($("#palavra").val())
+                buscar($("#pessoa").val())
             });
         </script>
         
