@@ -1,15 +1,17 @@
 <?php
 
-// cabeçalho
+// cabeçalho.
 header('Content-Type: text/html; iso-8859-1;charset:utf-8;');
 
+// conexão com banco de dados.
 $conecta = new PDO('mysql:host=localhost;dbname=aula_ajaxphp;charset=utf8', 'root', '');
 
-//fim da conexão com o banco de dados
+//requisição post.
 
-$palavra = $_POST['palavra'];
+$pessoa = $_POST['pessoa'];
 
-if(!empty($palavra))
+// se a variavel palavra estiver preenchida o algoritimo realiza o select se não houver atribui 0.
+if(!empty($pessoa))
 {
     $sql = $conecta->query("SELECT id FROM usuario where nome LIKE '%$palavra%' ");
     $id = array($sql->fetch(\PDO::FETCH_COLUMN));
@@ -21,8 +23,6 @@ if(!empty($palavra))
     $email = array($sql->fetch(\PDO::FETCH_COLUMN));
     
     $count = array($sql->rowCount(\PDO::FETCH_ASSOC));
-    
-    echo implode($count);
 }
 else
 {
@@ -36,6 +36,7 @@ else
     <?php
     if($count > 0){
     ?>
+    <!-- Lista a pessoa buscada -->
     <table class="table table-striped table-advance table-hover">
         <tbody>
             <tr>
