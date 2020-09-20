@@ -13,6 +13,7 @@ $pessoa = $_POST['pessoa'];
 // se a variavel palavra estiver preenchida o algoritimo realiza o select se não houver atribui 0.
 if(!empty($pessoa))
 {
+    
     $sql = $conecta->query("SELECT id FROM usuario where nome LIKE '%$palavra%' ");
     $id = array($sql->fetch(\PDO::FETCH_COLUMN));
     
