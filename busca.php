@@ -23,11 +23,21 @@ if(!empty($pessoa))
     $email = array($sql->fetch(\PDO::FETCH_COLUMN));
     
     $count = array($sql->rowCount(\PDO::FETCH_ASSOC));
+    
+    // se o nome não existir retorna a frase: Nao foram encontrados registros com esta palavra.
+    if(implode($count) == 0)
+    {
+        $count = 0;
+    }
+    
 }
+
+// Se  a variavel pessoa estiver vazia atribui 0 e retorna a frase: Nao foram encontrados registros com esta palavra.
 else
 {
     $count = 0;
 }
+
 ?>
 <section class="panel col-lg-9">
     <header class="panel-heading">
