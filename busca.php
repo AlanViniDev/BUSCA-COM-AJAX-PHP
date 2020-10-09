@@ -10,7 +10,7 @@ $conecta = new PDO('mysql:host=localhost;dbname=aula_ajaxphp;charset=utf8', 'roo
 
 $pessoa = $_POST['pessoa'];
 
-// se a variavel palavra estiver preenchida o algoritimo realiza o select se não houver atribui 0.
+// se a variavel pessoa estiver preenchida o algoritimo realiza o select se não houver atribui 0.
 if(!empty($pessoa))
 {
     
